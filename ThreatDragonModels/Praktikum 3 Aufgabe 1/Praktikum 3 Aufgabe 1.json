@@ -179,14 +179,14 @@
                   "id": "914d3956-2dd9-4874-a784-c980669beb2d",
                   "title": "Server Side Request Forgery um Auth Challenge zu umgehen",
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "High",
                   "type": "Spoofing",
-                  "description": "CAPEC-664: Server Side Request Forgery\n\nAngreifer sendet eine schadhafte Anfrage an Login-Service. Die Anfrage löst eine Request Forgery aus, die die OTT dann an einen Server des Angreifers sendet. Der Angreifer kann dann mit einer weiteren Anfrage die OTT Eingabe des Nutzers immitieren und sich einloggen",
+                  "description": "CAPEC-664: Server Side Request Forgery\n\nAngreifer sendet eine schadhafte Anfrage an Login-Service. Die Anfrage löst eine Request Forgery aus, die die OTT dann an einen Server des Angreifers sendet. Der Angreifer kann dann mit einer weiteren Anfrage die OTT Eingabe des Nutzers immitieren und sich einloggen\n\nDamage (Schaden) -> 7 Kann sich als Nutzer ausgeben, hat aber keine Privilege escalation\nReproducibility (Reproduzierbarkeit) -> 8 Solange reproduzierbar, bis SSRF entedeckt wurde\nExploitability (Ausnutzbarkeit) -> 6 passenden Payload zu entwickeln kann schwierig sein\nAffected User (betroffene Nutzer) -> 10 Betrifft alle User",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 3,
-                  "score": ""
+                  "score": "31"
                 }
               ]
             }
