@@ -20,11 +20,11 @@
           {
             "position": {
               "x": 539.9999999999998,
-              "y": -9.999999999999034
+              "y": -89.99999999999909
             },
             "size": {
-              "width": 780,
-              "height": 610
+              "width": 820,
+              "height": 690
             },
             "shape": "trust-boundary-box",
             "attrs": {
@@ -140,8 +140,8 @@
                 "text": "Login System"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -155,12 +155,26 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "914d3956-2dd9-4874-a784-c980669beb2d",
+                  "title": "Server Side Request Forgery um Auth Challenge zu umgehen",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "CAPEC-664: Server Side Request Forgery\n\nAngreifer sendet eine schadhafte Anfrage an Login-Service. Die Anfrage löst eine Request Forgery aus, die die OTT dann an einen Server des Angreifers sendet. Der Angreifer kann dann mit einer weiteren Anfrage die OTT Eingabe des Nutzers immitieren und sich einloggen",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -785,45 +799,6 @@
               "protocol": "",
               "threats": []
             },
-            "id": "bfc20935-c29b-4ffc-8b49-e9747ff0fc76",
-            "source": {
-              "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
-            },
-            "target": {
-              "cell": "9ab4badc-e234-49cb-a84e-07ee58741c25"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
             "id": "a2229d1b-046d-419f-9ab3-8049b81f91ed",
             "source": {
               "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
@@ -956,15 +931,109 @@
             },
             "vertices": [
               {
-                "x": 830,
-                "y": 126
+                "x": 870,
+                "y": 90
               }
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "32a58cf8-d7eb-4571-b60d-08727bb602ab",
+                  "title": "Adversary in the Middle (AiTM)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "CAPEC-94: Adversary in the Middle (AiTM)\n\nAngreifer kann Telefonnummer ändern, die aufgelöst werden soll. Token wird dann an Angreifer gesendet und nicht an User. Da Token 1 Jahr gültig ist, kann sich Angreifer einloggen wenn er zusätzlich noch Login Daten hat.\nAngiff ist möglich, wenn er symmetrischen schlüssel bekommt, der unverschlüsselt im Config file liegt",
+                  "mitigation": "Symmetrischen Schlüssel sicher abspeichern, um Kommunikationskanal zwischen Allsecure und Auflösungsservice zu härten",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "d1d64428-7887-431f-afba-5ff200c53327",
+            "source": {
+              "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
+            },
+            "target": {
+              "cell": "9ab4badc-e234-49cb-a84e-07ee58741c25"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "6e24121b-7745-4d51-a0eb-800dbb20f5bf",
+            "source": {
+              "cell": "5e2d0278-eff8-4658-a92f-4fbb95d28ff9"
+            },
+            "target": {
+              "cell": "03d19aa5-fad6-4588-81ae-021d5a817750"
+            }
+          },
+          {
             "position": {
-              "x": 869.9999999999991,
-              "y": 40
+              "x": 920,
+              "y": 60
             },
             "size": {
               "width": 120,
@@ -975,11 +1044,13 @@
                 "text": "Log DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -993,19 +1064,33 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "29295d82-c063-4910-81b8-451c91479b4f",
+                  "title": "Log Files manipulieren",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "CAPEC-93: Log Injection-Tampering-Forging\n\nAngreifer kann die Log-Daten seiner eigenen Requests in der DB löschen oder manipulieren, um seine Spuren zu verwischen",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "position": {
-              "x": 1193.749999999999,
-              "y": 20
+              "x": 1183.749999999999,
+              "y": -20
             },
             "size": {
               "width": 112.5,
@@ -1038,8 +1123,8 @@
           },
           {
             "position": {
-              "x": 991.25,
-              "y": 140
+              "x": 970,
+              "y": 150
             },
             "size": {
               "width": 70,
@@ -1062,8 +1147,8 @@
           },
           {
             "position": {
-              "x": 1100,
-              "y": 370
+              "x": 970,
+              "y": 475
             },
             "size": {
               "width": 112.5,
@@ -1086,8 +1171,8 @@
           },
           {
             "position": {
-              "x": 956.25,
-              "y": 305
+              "x": 1098,
+              "y": 345.00000000000097
             },
             "size": {
               "width": 140,
@@ -1148,7 +1233,7 @@
           {
             "position": {
               "x": 321,
-              "y": 220
+              "y": 240
             },
             "size": {
               "width": 112.5,
@@ -1249,8 +1334,8 @@
           },
           {
             "position": {
-              "x": 1060,
-              "y": 40
+              "x": 1071.249999999999,
+              "y": 60
             },
             "size": {
               "width": 112.5,
@@ -1593,8 +1678,8 @@
           },
           {
             "position": {
-              "x": 1320,
-              "y": 270
+              "x": 1238,
+              "y": 325
             },
             "size": {
               "width": 112.5,
@@ -1665,8 +1750,8 @@
           },
           {
             "position": {
-              "x": 642.25,
-              "y": 60
+              "x": 599.9999999999991,
+              "y": -45
             },
             "size": {
               "width": 130,
@@ -1677,33 +1762,47 @@
                 "text": "SIEM"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "process",
-            "id": "c5a15221-afaf-4ca9-b046-e855050bad89",
             "zIndex": 35,
+            "id": "c5a15221-afaf-4ca9-b046-e855050bad89",
             "data": {
               "type": "tm.Process",
               "name": "SIEM",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "71f108fa-2432-4714-ac4a-34cd7a1b0459",
+                  "title": "DoS Attack",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Denial of service",
+                  "description": "CAPEC-125: Flooding\n\nDer Angreifer sendet extrem viele Login Anfragen an den Login-Service. Dadurch erhält der SIEM-Service große Datenmengen vom Login-Service und auch vom 2Faktor-Service (siehe Diagramm).\nSIEM erhält also pro Flooding-Request von zwei Prozessen Daten. Man kann deshalb davon ausgehen, das SIEM früher ausfällt als Login-Service, sodass Angreifer eigentliche Attacke noch ausführen kann\n\nWenn der SIEM-Service dann nicht mehr erreichbar ist, kann der Angreifer den eigentlichen Angriff starten, den der SIEM-Service nicht erkennen soll.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "position": {
-              "x": 854,
-              "y": 200
+              "x": 829.9999999999998,
+              "y": 160
             },
             "size": {
               "width": 112.5,
@@ -1716,8 +1815,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "af964a78-fb15-4402-b388-49b0a629c74e",
             "zIndex": 36,
+            "id": "af964a78-fb15-4402-b388-49b0a629c74e",
             "data": {
               "type": "tm.Text",
               "name": "Traffic Daten",
@@ -1740,18 +1839,18 @@
             },
             "visible": true,
             "shape": "td-text-block",
+            "zIndex": 37,
             "id": "ee030e92-a63c-44d6-81f6-e76ca7fe52a8",
             "data": {
               "type": "tm.Text",
               "name": "Traffic Daten",
               "hasOpenThreats": false
-            },
-            "zIndex": 37
+            }
           },
           {
             "position": {
-              "x": 739,
-              "y": 20
+              "x": 893.7499999999998,
+              "y": -30
             },
             "size": {
               "width": 112.5,
@@ -1759,23 +1858,23 @@
             },
             "attrs": {
               "text": {
-                "text": "Report"
+                "text": "signierten Bericht\nschicken"
               }
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "94174210-496a-4889-97a6-3f061a8f223f",
             "zIndex": 38,
+            "id": "94174210-496a-4889-97a6-3f061a8f223f",
             "data": {
               "type": "tm.Text",
-              "name": "Report",
+              "name": "signierten Bericht\nschicken",
               "hasOpenThreats": false
             }
           },
           {
             "position": {
-              "x": 757.4999999999991,
-              "y": 85
+              "x": 787.5,
+              "y": 40
             },
             "size": {
               "width": 112.5,
@@ -1788,8 +1887,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "74a117f9-e934-440b-a52c-20d12e003955",
             "zIndex": 39,
+            "id": "74a117f9-e934-440b-a52c-20d12e003955",
             "data": {
               "type": "tm.Text",
               "name": "Log Daten",
@@ -1802,6 +1901,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 5
   }
 }
