@@ -191,8 +191,8 @@
                 "text": "Export Report"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -206,12 +206,26 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "65c350ce-3ab4-4f5f-8f25-4cf0f89423f8",
+                  "title": "Bericht an Angreifer schicken",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "\n\nAngenommen der Export service funktioniert so, dass er einen Konfigurierten Scheduler/Worker hat, der in einem besitmmten Zeitintervall berichte schickt, kann man die Konfiguration manipulieren, so dass der Bericht nicht nur an das Management, sondern gleichzeitig auch an den Angreifer geschickt wird.\nDadurch werden alle Log Daten der Nutzer (IP,Login,Nummer) preisgegeben (hohe bedohung)",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -601,69 +615,6 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Weiterleitung\ntelefonnummer",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "32a58cf8-d7eb-4571-b60d-08727bb602ab",
-                  "title": "Adversary in the Middle (AiTM)",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "CAPEC-94: Adversary in the Middle (AiTM)\n\nAngreifer kann Telefonnummer ändern, die aufgelöst werden soll. Token wird dann an Angreifer gesendet und nicht an User. Da Token 1 Jahr gültig ist, kann sich Angreifer einloggen wenn er zusätzlich noch Login Daten hat.\nAngiff ist möglich, wenn er symmetrischen schlüssel bekommt, der unverschlüsselt im Config file liegt",
-                  "mitigation": "Symmetrischen Schlüssel sicher abspeichern, um Kommunikationskanal zwischen Allsecure und Auflösungsservice zu härten",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 1,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "d1d64428-7887-431f-afba-5ff200c53327",
-            "source": {
-              "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
-            },
-            "target": {
-              "cell": "9ab4badc-e234-49cb-a84e-07ee58741c25"
-            },
-            "vertices": [
-              {
-                "x": 1410,
-                "y": 331
-              }
-            ],
-            "labels": [
-              "Weiterleitung\ntelefonnummer"
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
                 "stroke": "#333333",
                 "targetMarker": {
                   "name": "block"
@@ -1038,6 +989,69 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Weiterleitung\ntelefonnummer",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "32a58cf8-d7eb-4571-b60d-08727bb602ab",
+                  "title": "Adversary in the Middle (AiTM)",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "CAPEC-94: Adversary in the Middle (AiTM)\nT1557: Adversary-in-the-Middle\n\nAngreifer kann Telefonnummer ändern, die aufgelöst werden soll. Token wird dann an Angreifer gesendet und nicht an User. Da Token 1 Jahr gültig ist, kann sich Angreifer einloggen wenn er zusätzlich noch Login Daten hat.\nAngiff ist möglich, wenn er symmetrischen schlüssel bekommt, der unverschlüsselt im Config file liegt",
+                  "mitigation": "Symmetrischen Schlüssel sicher abspeichern, um Kommunikationskanal zwischen Allsecure und Auflösungsservice zu härten",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "d1d64428-7887-431f-afba-5ff200c53327",
+            "source": {
+              "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
+            },
+            "target": {
+              "cell": "9ab4badc-e234-49cb-a84e-07ee58741c25"
+            },
+            "vertices": [
+              {
+                "x": 1410,
+                "y": 331
+              }
+            ],
+            "labels": [
+              "Weiterleitung\ntelefonnummer"
+            ]
+          },
+          {
             "position": {
               "x": 920,
               "y": 60
@@ -1132,7 +1146,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "CAPEC-134: Email Injection\n\nWenn Angreifer durch vorheriges Footprinting weiß, dass ein Report vom Management erwartet wird, kann er den Report imitieren und schadhafte Daten schicken",
+                  "description": "CAPEC-134: Email Injection\nT1566: Phishing \n\nWenn Angreifer durch vorheriges Footprinting weiß, dass ein Report vom Management erwartet wird, kann er den Report imitieren und schadhafte Daten schicken",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1642,7 +1656,7 @@
                   "status": "Open",
                   "severity": "Low",
                   "type": "Denial of service",
-                  "description": "CAPEC-125: Flooding\n\nDer Angreifer sendet extrem viele Login Anfragen an den Login-Service. Dadurch erhält der SIEM-Service große Datenmengen vom Login-Service und auch vom 2Faktor-Service (siehe Diagramm).\nSIEM erhält also pro Flooding-Request von zwei Prozessen Daten. Man kann deshalb davon ausgehen, das SIEM früher ausfällt als Login-Service, sodass Angreifer eigentliche Attacke noch ausführen kann\n\nWenn der SIEM-Service dann nicht mehr erreichbar ist, kann der Angreifer den eigentlichen Angriff starten, den der SIEM-Service nicht erkennen soll.",
+                  "description": "CAPEC-125: Flooding\nEndpoint Denial of Service: Application Exhaustion Flood\n\nDer Angreifer sendet extrem viele Login Anfragen an den Login-Service. Dadurch erhält der SIEM-Service große Datenmengen vom Login-Service und auch vom 2Faktor-Service (siehe Diagramm).\nSIEM erhält also pro Flooding-Request von zwei Prozessen Daten. Man kann deshalb davon ausgehen, das SIEM früher ausfällt als Login-Service, sodass Angreifer eigentliche Attacke noch ausführen kann\n\nWenn der SIEM-Service dann nicht mehr erreichbar ist, kann der Angreifer den eigentlichen Angriff starten, den der SIEM-Service nicht erkennen soll.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1658,6 +1672,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 6
+    "threatTop": 7
   }
 }
