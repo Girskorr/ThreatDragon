@@ -143,7 +143,7 @@
           {
             "position": {
               "x": 560,
-              "y": 240
+              "y": 230.00000000000097
             },
             "size": {
               "width": 110,
@@ -172,7 +172,7 @@
               "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
-              "isWebApplication": false,
+              "isWebApplication": true,
               "privilegeLevel": "",
               "threats": [
                 {
@@ -223,7 +223,7 @@
               "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
-              "isWebApplication": false,
+              "isWebApplication": true,
               "privilegeLevel": "",
               "threats": [
                 {
@@ -1044,12 +1044,12 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "CAPEC-94: Adversary in the Middle (AiTM)\nT1557: Adversary-in-the-Middle\n\nWenn Angreifer Symmetrischen Key kennt (der unverschlüsselt in der Config liegt), kann er den Auflösungsrequest abfangen und seine eigene Nummer eintragen. Der Gateway der Telefonnummerauflösung schickt den Token dann zu der Nummer des Angreifers, anstatt an den User.\nDa der Token ein Jahr gültig ist, kann der Angreifer Problemlos Sessions starten, wenn er auch die Login Daten des Users kennt",
+                  "description": "CAPEC-94: Adversary in the Middle (AiTM)\nT1557: Adversary-in-the-Middle\n\nWenn Angreifer Symmetrischen Key kennt (der unverschlüsselt in der Config liegt), kann er den Auflösungsrequest abfangen und seine eigene Nummer eintragen. Der Gateway der Telefonnummerauflösung schickt den Token dann zu der Nummer des Angreifers, anstatt an den User.\nDa der Token ein Jahr gültig ist, kann der Angreifer Problemlos Sessions starten, wenn er auch die Login Daten des Users kennt\n\nDamage (Schaden) -> 7 Angreifer kann Session eines Nutzers übernehmen.\nReproducibility (Reproduzierbarkeit) 10 -> Wenn Angreifer den Symmetrischen Schlüssel erlangt hat, kann er den Angriff bei jedem Request starten\nExploitability (Ausnutzbarkeit) 4 -> Damit dieser Angriff funktioniert, muss erstmal der Schlüssel erlangt werden, was schwierig sein kann\nAffected User (betroffene Nutzer) -> 4 Es ist nur der Nutzer betroffen, der sich einloggen will\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 10,
-                  "score": ""
+                  "score": "25"
                 }
               ]
             },
@@ -1575,7 +1575,7 @@
               "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
-              "isWebApplication": false,
+              "isWebApplication": true,
               "privilegeLevel": "",
               "threats": [
                 {
@@ -1674,7 +1674,7 @@
               "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
-              "isWebApplication": false,
+              "isWebApplication": true,
               "privilegeLevel": "",
               "threats": [
                 {
