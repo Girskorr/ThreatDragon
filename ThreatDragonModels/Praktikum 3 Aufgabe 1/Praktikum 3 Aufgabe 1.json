@@ -232,12 +232,12 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "CAPEC 118: Collect and Analyze Information\nT1053: Scheduled Task/Job\n\nAngenommen der Export service funktioniert so, dass er einen Konfigurierten Scheduler/Worker hat, der in einem besitmmten Zeitintervall berichte schickt, kann man die Konfiguration manipulieren, so dass der Bericht nicht nur an das Management, sondern gleichzeitig auch an den Angreifer geschickt wird.\nDadurch werden alle Log Daten der Nutzer (IP,Login,Nummer) preisgegeben (hohe bedohung)",
+                  "description": "CAPEC 118: Collect and Analyze Information\nT1053: Scheduled Task/Job\n\nAngenommen der Export service funktioniert so, dass er einen Konfigurierten Scheduler/Worker hat, der in einem besitmmten Zeitintervall berichte schickt, kann man die Konfiguration manipulieren, so dass der Bericht nicht nur an das Management, sondern gleichzeitig auch an den Angreifer geschickt wird.\nDadurch werden alle Log Daten der Nutzer (IP,Login,Nummer) preisgegeben (hohe bedohung)\n\nDamage (Schaden) -> 10 Fatal, sensible Informationen über ALLE Nutzer werden veröffentlicht\nReproducibility (Reproduzierbarkeit) -> 10 Wenn scheduler einmal konfiguriert ist, wird der Angriff immer wieder ausgeführt\nExploitability (Ausnutzbarkeit) -> 4 Export Prozess ist nicht über das Internet erreichbar/exposed, deshalb schwierig, konfiguration des Schedulers zu ändern \nAffected User (betroffene Nutzer) -> 10 Betrifft alle Nutzer",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 7,
-                  "score": ""
+                  "score": "34 "
                 }
               ]
             }
@@ -1111,7 +1111,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Repudiation",
-                  "description": "CAPEC-93: Log Injection-Tampering-Forging\n\nAngreifer kann die Log-Daten seiner eigenen Requests in der DB löschen oder manipulieren, um seine Spuren zu verwischen",
+                  "description": "CAPEC-93: Log Injection-Tampering-Forging\n\nAngreifer kann die Log-Daten seiner eigenen Requests in der DB löschen oder manipulieren, um seine Spuren zu verwischen\n\nDamage (Schaden)-> 4 Es entsteht kein direketer Schaden für Nutzer\nReproducibility (Reproduzierbarkeit) -> Wenn man\nExploitability (Ausnutzbarkeit)\nAffected User (betroffene Nutzer)",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1582,14 +1582,14 @@
                   "id": "f6048cbf-84ac-490b-b38e-864246b9dc9c",
                   "title": "NoSQL Injection Log DB",
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "High",
                   "type": "Elevation of privilege",
-                  "description": "CAPEC-676: NoSQL Injection\n\nWenn Angreifer dafür sorgt, das eine Telefongesellschaft eine Nachricht and den OTT-Service von Allsecure sendet, kann in der Nachricht (die die Telco einfach nur weiterleitet) ein schadhaftes NoSQL Statement stehen, dass zu elevation of privilege führt.",
+                  "description": "CAPEC-676: NoSQL Injection\n\nWenn Angreifer dafür sorgt, das eine Telefongesellschaft eine Nachricht and den OTT-Service von Allsecure sendet, kann in der Nachricht (die die Telco einfach nur weiterleitet) ein schadhaftes NoSQL Statement stehen, dass zu elevation of privilege führt. NoSQL wird wegen Logging verwendet\n\nDamage (Schaden) -> 9 Elevation of Privilege kann beliebig groß sein\nReproducibility (Reproduzierbarkeit) -> 8 Wenn das Setup für den Angriff einmal steht, kann man den Angriff beliebig oft ausführen. Kann aber bei zu vielen Angriffen von SIEM entdeckt werden\nExploitability (Ausnutzbarkeit) -> 4 Telco zu dem Request an OTT-Service zu bringen, kann kompliziert und auch kostspielig sein, da jede Telefonnummerauflösung Gebühren kostet\nAffected User (betroffene Nutzer) -> 10 Es ist vertikale wie auch horizontale Elevation möglich\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 9,
-                  "score": ""
+                  "score": "31"
                 }
               ]
             }
