@@ -106,8 +106,8 @@
                 "text": "User"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -121,15 +121,29 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "ae68b04c-afbd-4f3b-8821-5f7e3d14d3c2",
+                  "title": "Cross-Site Scripting (XSS)",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "CAPEC-124: Shared Resource Manipulation\nCAPEC-63: Cross-Site Scripting (XSS)\n\nDurch XSS Attack kann Angreifer zugriff auf SD Karte erlangen, auf der die Appdata für alle Allsecure Anwendungen gespeichert ist. Angreifer kann dann \"invalid trust assumptions\" ausnutzen. Denn die anderen Anwendungen vertrauen generell den von geschriebenen Daten von anderen Allsecure Apps\n\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "position": {
               "x": 560,
-              "y": 245.00000000000097
+              "y": 240
             },
             "size": {
               "width": 110,
@@ -218,7 +232,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "\n\nAngenommen der Export service funktioniert so, dass er einen Konfigurierten Scheduler/Worker hat, der in einem besitmmten Zeitintervall berichte schickt, kann man die Konfiguration manipulieren, so dass der Bericht nicht nur an das Management, sondern gleichzeitig auch an den Angreifer geschickt wird.\nDadurch werden alle Log Daten der Nutzer (IP,Login,Nummer) preisgegeben (hohe bedohung)",
+                  "description": "CAPEC 118: Collect and Analyze Information\nT1053: Scheduled Task/Job\n\nAngenommen der Export service funktioniert so, dass er einen Konfigurierten Scheduler/Worker hat, der in einem besitmmten Zeitintervall berichte schickt, kann man die Konfiguration manipulieren, so dass der Bericht nicht nur an das Management, sondern gleichzeitig auch an den Angreifer geschickt wird.\nDadurch werden alle Log Daten der Nutzer (IP,Login,Nummer) preisgegeben (hohe bedohung)",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -600,15 +614,15 @@
               "threats": []
             },
             "id": "bfc90df1-1773-461f-a5d7-ddb950f15647",
+            "labels": [
+              "Log"
+            ],
             "source": {
               "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
             },
             "target": {
               "cell": "ef76850d-863e-43c5-845e-34258959bb1f"
             },
-            "labels": [
-              "Log"
-            ],
             "vertices": []
           },
           {
@@ -643,16 +657,16 @@
               "threats": []
             },
             "id": "b7255cb5-d4d2-4b2a-a42f-6cf9bdf170c8",
+            "labels": [
+              "Nachricht wird über OTT Service an User versandt"
+            ],
             "source": {
               "cell": "f2b6686e-8a23-4eaa-bcc0-e42e421cc01d"
             },
             "target": {
               "cell": "47b2214f-5568-42ec-a4c3-274f1f42331e"
             },
-            "vertices": [],
-            "labels": [
-              "Nachricht wird über OTT Service an User versandt"
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -686,15 +700,20 @@
               "threats": []
             },
             "id": "4b616c43-113a-4bee-826a-9e572d70c3ef",
+            "labels": [
+              "Auth Challenge"
+            ],
             "source": {
               "cell": "5e2d0278-eff8-4658-a92f-4fbb95d28ff9"
             },
             "target": {
               "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
             },
-            "vertices": [],
-            "labels": [
-              "Auth Challenge"
+            "vertices": [
+              {
+                "x": 950,
+                "y": 370
+              }
             ]
           },
           {
@@ -729,16 +748,16 @@
               "threats": []
             },
             "id": "6e24121b-7745-4d51-a0eb-800dbb20f5bf",
+            "labels": [
+              "Log"
+            ],
             "source": {
               "cell": "5e2d0278-eff8-4658-a92f-4fbb95d28ff9"
             },
             "target": {
               "cell": "ef76850d-863e-43c5-845e-34258959bb1f"
             },
-            "vertices": [],
-            "labels": [
-              "Log"
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -772,6 +791,9 @@
               "threats": []
             },
             "id": "411f5a8c-9d29-4d21-9586-aaf0dce80872",
+            "labels": [
+              "signierten Bericht\nschicken"
+            ],
             "source": {
               "cell": "c5a15221-afaf-4ca9-b046-e855050bad89"
             },
@@ -787,9 +809,6 @@
                 "x": 1010,
                 "y": 20
               }
-            ],
-            "labels": [
-              "signierten Bericht\nschicken"
             ]
           },
           {
@@ -824,6 +843,9 @@
               "threats": []
             },
             "id": "3af3cff6-d4b3-42d2-9bbf-748b3c0ad080",
+            "labels": [
+              "Signierten\nBericht schicken\n"
+            ],
             "source": {
               "cell": "03d19aa5-fad6-4588-81ae-021d5a817750"
             },
@@ -835,9 +857,6 @@
                 "x": 1230,
                 "y": 180
               }
-            ],
-            "labels": [
-              "Signierten\nBericht schicken\n"
             ]
           },
           {
@@ -872,6 +891,9 @@
               "threats": []
             },
             "id": "78fce96b-18cc-42ce-9426-24bc98af3ad2",
+            "labels": [
+              "Daten von Prozessen\nfür Auswertung"
+            ],
             "source": {
               "cell": "ef76850d-863e-43c5-845e-34258959bb1f"
             },
@@ -887,9 +909,6 @@
                 "x": 770,
                 "y": 60
               }
-            ],
-            "labels": [
-              "Daten von Prozessen\nfür Auswertung"
             ]
           },
           {
@@ -924,6 +943,9 @@
               "threats": []
             },
             "id": "57784ba4-ff21-406e-bccf-1d459ba4d0c8",
+            "labels": [
+              "Daten fetchen"
+            ],
             "source": {
               "cell": "03d19aa5-fad6-4588-81ae-021d5a817750"
             },
@@ -935,9 +957,6 @@
                 "x": 1110,
                 "y": 150
               }
-            ],
-            "labels": [
-              "Daten fetchen"
             ]
           },
           {
@@ -972,15 +991,15 @@
               "threats": []
             },
             "id": "5b07b2f4-e737-4495-9c9b-d3ef8985870a",
+            "labels": [
+              "Log"
+            ],
             "source": {
               "cell": "47b2214f-5568-42ec-a4c3-274f1f42331e"
             },
             "target": {
               "cell": "ef76850d-863e-43c5-845e-34258959bb1f"
             },
-            "labels": [
-              "Log"
-            ],
             "vertices": [
               {
                 "x": 850,
@@ -1009,7 +1028,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Weiterleitung\ntelefonnummer",
+              "name": "Weiterleitung Telefonnummer",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -1020,35 +1039,29 @@
               "protocol": "",
               "threats": [
                 {
-                  "id": "32a58cf8-d7eb-4571-b60d-08727bb602ab",
+                  "id": "ce21b33a-a141-4f41-9a2f-9ab646fc573f",
                   "title": "Adversary in the Middle (AiTM)",
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Medium",
                   "type": "Tampering",
-                  "description": "CAPEC-94: Adversary in the Middle (AiTM)\nT1557: Adversary-in-the-Middle\n\nAngreifer kann Telefonnummer ändern, die aufgelöst werden soll. Token wird dann an Angreifer gesendet und nicht an User. Da Token 1 Jahr gültig ist, kann sich Angreifer einloggen wenn er zusätzlich noch Login Daten hat.\nAngiff ist möglich, wenn er symmetrischen schlüssel bekommt, der unverschlüsselt im Config file liegt",
-                  "mitigation": "Symmetrischen Schlüssel sicher abspeichern, um Kommunikationskanal zwischen Allsecure und Auflösungsservice zu härten",
+                  "description": "CAPEC-94: Adversary in the Middle (AiTM)\nT1557: Adversary-in-the-Middle\n\nWenn Angreifer Symmetrischen Key kennt (der unverschlüsselt in der Config liegt), kann er den Auflösungsrequest abfangen und seine eigene Nummer eintragen. Der Gateway der Telefonnummerauflösung schickt den Token dann zu der Nummer des Angreifers, anstatt an den User.\nDa der Token ein Jahr gültig ist, kann der Angreifer Problemlos Sessions starten, wenn er auch die Login Daten des Users kennt",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 1,
+                  "number": 10,
                   "score": ""
                 }
               ]
             },
-            "id": "d1d64428-7887-431f-afba-5ff200c53327",
+            "id": "e9aab29d-c3d4-4992-807d-52dabc8a4a87",
             "source": {
               "cell": "4448b0c8-b602-41ba-bb4b-318d14ba3136"
             },
             "target": {
               "cell": "9ab4badc-e234-49cb-a84e-07ee58741c25"
             },
-            "vertices": [
-              {
-                "x": 1410,
-                "y": 331
-              }
-            ],
             "labels": [
-              "Weiterleitung\ntelefonnummer"
+              "Weiterleitung Telefonnummer"
             ]
           },
           {
@@ -1544,8 +1557,8 @@
                 "text": "Allsecure OTT Service"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1559,12 +1572,26 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "f6048cbf-84ac-490b-b38e-864246b9dc9c",
+                  "title": "NoSQL Injection Log DB",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "CAPEC-676: NoSQL Injection\n\nWenn Angreifer dafür sorgt, das eine Telefongesellschaft eine Nachricht and den OTT-Service von Allsecure sendet, kann in der Nachricht (die die Telco einfach nur weiterleitet) ein schadhaftes NoSQL Statement stehen, dass zu elevation of privilege führt.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -1672,6 +1699,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 7
+    "threatTop": 10
   }
 }
