@@ -131,11 +131,11 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "CAPEC-124: Shared Resource Manipulation\nCAPEC-63: Cross-Site Scripting (XSS)\n\nDurch XSS Attack kann Angreifer zugriff auf SD Karte erlangen, auf der die Appdata für alle Allsecure Anwendungen gespeichert ist. Angreifer kann dann \"invalid trust assumptions\" ausnutzen. Denn die anderen Anwendungen vertrauen generell den von geschriebenen Daten von anderen Allsecure Apps\n\nDamage (Schaden) -> 10 Schwachstelle einer Anwendung kann sich auf alle anderen Anwendungen auswirken\nReproducibility (Reproduzierbarkeit) 7 -> Angenommen Inputvalidierung wird nicht geändert, kann man immer wieder Payloads auf der SD Karte speichern\nExploitability (Ausnutzbarkeit) -> 6 Ausnutzbarkeit hängt von der Effektivität der Inputvalidierung ab \nAffected User (betroffene Nutzer) -> 4 Nur der Nutzer bei dem XSS Attack funktionert ist betroffen\n",
-                  "mitigation": "Gegenmaßnahme​\n\nD3-FCOA: File Content Analysis​\n- Allsecure Anwendungen setzen nicht mehr auf \"Trust Assumptions\", und analysieren Files nach malware oder manipulation, z.B. mit Checksummen​\n- Allsecure muss Regeln für Patternmatching schreibem​\n- Typ: Abschwächen, Exploitability wird erschwert",
+                  "mitigation": "Gegenmaßnahme​\n\nD3-FCOA: File Content Analysis​\n- Allsecure Anwendungen setzen nicht mehr auf \"Trust Assumptions\", und analysieren Files nach malware oder manipulation, z.B. mit Checksummen​\n- Allsecure muss Regeln für Patternmatching schreibem​\n- Typ: Abschwächen, Exploitability wird erschwert\n\nDREAD neu:\nDamage (Schaden) -> 10 bleibt gleich\nReproducibility (Reproduzierbarkeit) 7 -> Wenn man Patterns umgeht, ändert sich Reproduzierbarkeit nicht\nExploitability (Ausnutzbarkeit) -> 2 Wird erschwert\nAffected User (betroffene Nutzer) -> 4 Nur der Nutzer bei dem XSS Attack funktionert ist betroffen",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 8,
-                  "score": "27"
+                  "score": "23"
                 }
               ]
             }
