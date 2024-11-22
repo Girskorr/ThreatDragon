@@ -1111,7 +1111,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Repudiation",
-                  "description": "CAPEC-93: Log Injection-Tampering-Forging\n\nAngreifer kann die Log-Daten seiner eigenen Requests in der DB löschen oder manipulieren, um seine Spuren zu verwischen\n\nDamage (Schaden)-> 4 Es entsteht kein direkter Schaden für Nutzer​\nReproducibility (Reproduzierbarkeit) -> 8 Wenn man Statement einmal hat ​\nExploitability (Ausnutzbarkeit) -> 7 gibt viele Datenflüsse zur DB für leichteren Angriff​\nAffected User (betroffene Nutzer) -> 1 weil nur Spuren verwischen",
+                  "description": "CAPEC-93: Log Injection-Tampering-Forging\nT1565: Data Manipulation \nAngreifer kann die Log-Daten seiner eigenen Requests in der DB löschen oder manipulieren, um seine Spuren zu verwischen\n\nDamage (Schaden)-> 4 Es entsteht kein direkter Schaden für Nutzer​\nReproducibility (Reproduzierbarkeit) -> 8 Wenn man Statement einmal hat ​\nExploitability (Ausnutzbarkeit) -> 7 gibt viele Datenflüsse zur DB für leichteren Angriff​\nAffected User (betroffene Nutzer) -> 1 weil nur Spuren verwischen",
                   "mitigation": "Gegenmaßnahme​\nMASVS-STORAGE-2: The app prevents leakage of sensitive data.​\n- In der PDF wird die Maßnahme sehr abstrakt gehalten\n- Team muss Gegenmaßnahmen Entwickeln, um dataleaks zu verhindern\n- Typ: Abschwächung",
                   "modelType": "STRIDE",
                   "new": false,
