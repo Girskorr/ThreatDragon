@@ -1158,11 +1158,11 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "CAPEC-134: Email Injection\nT1566: Phishing \n\nWenn Angreifer durch vorheriges Footprinting weiß, dass ein Report vom Management erwartet wird, kann er den Report imitieren und schadhafte Daten schicken\n\nDamage (Schaden) 6 -> variiert je nach Payload, den das Management öffnet\nReproducibility (Reproduzierbarkeit) 3 -> Ob Angriff funktioniert hängt davon ab, ob Management auf den Angriff reinfällt. Reproduzierbarkeit kann genauer bewertet werden, wenn man das technische know-how des Managements kennt\nExploitability (Ausnutzbarkeit) -> 10 Es ist sehr einfach, Pishing Mails zu schreiben\nAffected User (betroffene Nutzer) -> 7 Kommt darauf an, was der gesendete Payload auslöst",
-                  "mitigation": "Gegenmaßnahme​\n\n- Mitre D3fend: Dynamic Analysis (D3-DA)​\n- Wenn verdacht auf Pishing besteht, Datei in Sandbox öffnen​\n- Umsetzung durch Tools einfach​\n- Exploitability wird verringert, alle anderen DREAD Faktoren bleiben gleich",
+                  "mitigation": "Gegenmaßnahme​\n\n- Mitre D3fend: Dynamic Analysis (D3-DA)​\n- Wenn verdacht auf Pishing besteht, Datei in Sandbox öffnen​\n- Umsetzung durch Tools einfach​\n- Exploitability wird verringert, alle anderen DREAD Faktoren bleiben gleich\n\nDREAD neu\nDamage (Schaden) 6 -> bleibt gleich, wenn Payload durchkommt\nReproducibility (Reproduzierbarkeit) 1 -> Wird nun noch zusätzlich durch tools vermindert\nExploitability (Ausnutzbarkeit) -> 6 Man muss jetzt einen Payload schreiben, der die Tools umgeht. Exploitability deshalb runtergesetzt\nAffected User (betroffene Nutzer) -> 7 Kommt darauf an, was der gesendete Payload auslöst",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 6,
-                  "score": "26"
+                  "score": "20"
                 }
               ]
             }
