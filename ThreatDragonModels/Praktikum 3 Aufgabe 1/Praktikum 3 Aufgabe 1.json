@@ -194,7 +194,7 @@
           {
             "position": {
               "x": 1128,
-              "y": 180
+              "y": 195.0000000000009
             },
             "size": {
               "width": 110,
@@ -1123,7 +1123,7 @@
           },
           {
             "position": {
-              "x": 1183.749999999999,
+              "x": 1193.749999999999,
               "y": -20
             },
             "size": {
@@ -1206,10 +1206,10 @@
               "threats": [
                 {
                   "id": "b6c6cecc-b7f2-4376-b9b0-ba343d307c6c",
-                  "title": "New STRIDE threat",
+                  "title": "Adversary in the Middle (AiTM)",
                   "status": "Open",
                   "severity": "Medium",
-                  "type": "Spoofing",
+                  "type": "Tampering",
                   "description": "CAPEC-94: Adversary in the Middle (AiTM)\nT1557: Adversary-in-the-Middle​\n\nWenn Angreifer Symmetrischen Key kennt (der unverschlüsselt in der Config liegt), kann er den Auflösungsrequest abfangen und seine eigene Nummer eintragen. Der Gateway der Telefonnummerauflösung schickt den Token dann zu der Nummer des Angreifers, anstatt an den User.​\n\nDa der Token ein Jahr gültig ist, kann der Angreifer Problemlos Sessions starten, wenn er auch die Login Daten des Users kennt​\n\nDREAD​\n\nDamage (Schaden) -> 7 Angreifer kann Session eines Nutzers übernehmen.\nReproducibility (Reproduzierbarkeit) 10 -> Wenn Angreifer den Symmetrischen Schlüssel erlangt hat, kann er den Angriff bei jedem Request starten\nExploitability (Ausnutzbarkeit) 4 -> Damit dieser Angriff funktioniert, muss erstmal der Schlüssel erlangt werden, was schwierig sein kann\nAffected User (betroffene Nutzer) -> 4 Es ist nur der Nutzer betroffen, der sich einloggen will​",
                   "mitigation": "D3-MENCR: Message Encryption​\n\n- Asymmetrische Verschlüsselung statt Symmetrische verwenden​\n- Operations-Team muss Configuration des Servers auf dem der Dienst läuft, ändern​\n- Exploitability und Reproducibility wird verringet, schaden und Affected Users bleibt gleich",
                   "modelType": "STRIDE",
